@@ -7,12 +7,12 @@ import {THUMB_DOWN_COMMENT} from './actions'
 const initialState = {
     comments: [
         {
-            id: 12741danx1278,
+            id: '12741danx1278',
             text: 'Nowy komentarz',
             votes: 0
         },
         {
-            id: 12741danb1278,
+            id: '12741danb1278',
             text: 'Stary komentarz',
             votes: 42
         }
