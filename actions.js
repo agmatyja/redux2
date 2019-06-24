@@ -5,6 +5,7 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
 export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
 
+const uuid = require('uuid');
 
 // kreatory akcji:
 function addComment(text) {
