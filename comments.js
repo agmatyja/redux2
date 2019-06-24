@@ -1,35 +1,26 @@
-import {ADD_COMMENT} from './actions'
-import {EDIT_COMMENT} from './actions'
-import {REMOVE_COMMENT} from './actions'
-import {THUMB_UP_COMMENT} from './actions'
-import {THUMB_DOWN_COMMENT} from './actions'
+import { ADD_COMMENT, EDIT_COMMENT, REMOVE_COMMENT, THUMB_UP_COMMENT, THUMB_DOWN_COMMENT } from './actions'
 
 const initialState = [
     {
-        id: 12741danx1278,
+        id: '12741danx1278',
         text: 'Nowy komentarz',
         votes: 0
     },
     {
-        id: 12741danb1278,
+        id: '12741danb1278',
         text: 'Stary komentarz',
         votes: 42
     }
 ];
 	
-
 function comments(state = initialState, action) {
     switch(action.type) {
         case ADD_COMMENT:
-            return Object.assign({}, state, {
-                comments: [
-                {
-                    id: action.id,
-                    text: action.text,
-                    votes: 0
-                }
-                , ...state]
-            });
+            return [ ...state, {
+				id: action.id,
+				text: action.text,
+				votes: 0,
+			}];
 			
 		case EDIT_COMMENT:
 			return state.map(comment => {
@@ -40,8 +31,7 @@ function comments(state = initialState, action) {
 			});
 			
 		case REMOVE_COMMENT:
-			return Object.assign({}, state, {
-				comments: state.comments.filter(comment => comment.id !== action.id)
+			return state.map(comments.filter(comment => comment.id !== action.id)
 			});
 		
 		case THUMB_UP_COMMENT:
@@ -64,3 +54,5 @@ function comments(state = initialState, action) {
             return state;
     }
 };
+
+export default comments;
